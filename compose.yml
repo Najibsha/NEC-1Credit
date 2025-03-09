@@ -1,1 +1,19 @@
-Update this file to add the content
+version: '3.8'
+
+services:
+  personal-api:
+    image: najibsha/22it025-personal-api
+    ports:
+      - "5000:5000"
+    networks:
+      - mynetwork
+
+  friend-api:
+    image: priyadharshini27/22it034-personal-api
+    ports:
+      - "5001:5000"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
