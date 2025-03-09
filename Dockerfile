@@ -1,1 +1,17 @@
-Update this file to add the content
+# Use official Python image
+FROM python:3.9
+
+# Set working directory
+WORKDIR /app
+
+# Copy all files to the container
+COPY . .
+
+# Install required packages
+RUN pip install flask
+
+# Expose the application port
+EXPOSE 5000
+
+# Run the Flask app
+CMD ["python", "personal-api.py"]
