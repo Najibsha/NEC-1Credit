@@ -1,19 +1,20 @@
-version: '3.8'
+version: '3'
 
 services:
   personal-api:
     image: najibsha/22it025-personal-api
     ports:
-      - "5000:5000"
-    networks:
-      - mynetwork
+      - "5003:5000"
+    restart: always  
 
-  friend-api:
-    image: priyadharshini27/22it034-personal-api
+  ml-model:
+    image: najibsha/22it025-ml-model
     ports:
       - "5001:5000"
-    networks:
-      - mynetwork
+    restart: always  
 
-networks:
-  mynetwork:
+  friend-service:
+    image: priyadharshini27/22it034-ml-model
+    ports:
+      - "5002:5000"
+    restart: always
