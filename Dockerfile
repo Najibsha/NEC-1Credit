@@ -1,17 +1,17 @@
-# Use official Python image
+# Use Python base image
 FROM python:3.9
 
 # Set working directory
 WORKDIR /app
 
-# Copy all files to the container
-COPY . .
+# Copy necessary files
+COPY personal-api.py /app/
 
-# Install required packages
+# Install dependencies
 RUN pip install flask
 
-# Expose the application port
+# Expose the port
 EXPOSE 5000
 
-# Run the Flask app
+# Run the API
 CMD ["python", "personal-api.py"]
